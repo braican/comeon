@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C'mon</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+	var quotes = new Array(
+						"yeah, the guy in the $3,000 suit is holding the elevator for the guy who doesn't make that in four months",
+						"yeah, like I'm going to spill coffee all over this $3,000 suit",
+						"yeah, like I'm going to take a whiz through this $5,000 suit",
+						"maybe you could save a little tail for me"
+							);
+							
+	var qlength = Math.round((quotes.length - 1)*Math.random());
+	$(function(){
+		$("#quote").html(quotes[qlength]);
+		var cmon = $("#cmon");
+		var audio = new Audio('cmon.mp3');
+		
+		$("#cmon-btn").click(function(){
+			console.log('getclicked');
+			qlength = Math.round((quotes.length - 1)*Math.random());
+			$("#quote").html(quotes[qlength]);
+			audio.play();
+		});
+	});
+	</script>
+	
+ <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+ <style type="text/css">
+   body{
+    font-family:'Raleway', sans-serif;
+   }
+		.container {
+			width:600px;
+			margin:0 auto;
+			font-family: Arial, Helvetica, sans-serif;
+			padding-left:300px;
+			background:url(gob.jpg) no-repeat top left;
+			height:500px;
+		}
+		#cmon-btn{
+			background: #ff0000;
+			background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#ff0000));
+			background: -webkit-linear-gradient(top, #ff0000, #ff0000);
+			background: -moz-linear-gradient(top, #ff0000, #ff0000);
+			background: -ms-linear-gradient(top, #ff0000, #ff0000);
+			background: -o-linear-gradient(top, #ff0000, #ff0000);
+			padding: 9px 18px;
+			-webkit-border-radius: 30px;
+			-moz-border-radius: 30px;
+			border-radius: 30px;
+			-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+			-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+			box-shadow: rgba(0,0,0,1) 0 1px 0;
+			text-shadow: rgba(0,0,0,.4) 0 1px 0;
+			color: white;
+			font-size: 16px;
+			font-family: Helvetica, Arial, Sans-Serif;
+			text-decoration: none;
+			vertical-align: middle;
+			text-transform:uppercase;
+			font-weight:bold;
+			text-align:center;
+			width:84px;
+			cursor:pointer;
+		}
+		
+		#cmon-btn:hover {
+			border-top-color: #6e0000;
+			background: #990000;
+			color: #fff;
+		}
+		.cmon-btn:active {
+			border-top-color: #ffffff;
+			background: #ffffff;
+		}
+	</style>
+</head>
+
+<body>
+<div class="container">
+	<p id="quote"></p>
+	<div id="cmon-btn">come on</div>
+	<audio id="cmon" src="" />
+</div>
+</body>
+</html>
